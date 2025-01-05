@@ -33,15 +33,15 @@ wget http://www.feijiangkeji.com/download/feijiang/feijiang-server-installer-0.0
 ```shell
 AUTH_CODE=your_auth_code_here  # 替换为你的实际授权码
 ```
-::: tip 授权码提示 
-每个微信号只能获取一个授权码
-:::
+> [!NOTE]
+> 每个微信号只能获取一个授权码
+
 
 
 ## 3、部署
-::: tip 软件安装前准备提示 
-部署支持两种方式
-:::
+> [!NOTE]
+> 部署支持两种方式
+
 
 ## 3-1、Docker部署(推荐)
 修改.env文件的Mongo配置参数，包括以下配置:
@@ -56,23 +56,23 @@ MONGO_DATABASE=feijiang                  # MongoDB 数据库名称
 ```shell
 sudo docker-compose up -d
 ```
-::: tip 提示 
-目前容器部署只支持host模式
-:::
+> [!NOTE]
+> 目前容器部署只支持host模式
+
 
 ### 3-2、本地部署
-::: tip 提示
-如果已安装MongoDB，请更新.env文件，相关参数见 # 3-1。
-:::
+> [!NOTE]
+> 如果已安装MongoDB，请更新.env文件，相关参数见 # 3-1。
+
 
 更新配置后，启动Feijiang服务
 ```shell
 sudo nohup ./feijiang-admin > feijiang-admin.log &
 sudo nohup ./feijiang-vpn > feijiang-vpn.log &
 ```
-::: tip 提示
-如果未安装MongoDB，可以使用Docker Compose安装。先修改.env文件Mongo配置参数，相关配置见 # 3-1。
-:::
+> [!NOTE]
+> 如果未安装MongoDB，可以使用Docker Compose安装。先修改.env文件Mongo配置参数，相关配置见 # 3-1。
+
 
 启动mongodb的docker容器
 
@@ -86,9 +86,9 @@ sudo docker-compose -f commons/composes/feijiang-mongo.yaml --env-file .env up -
 ```shell
 http://你的宿主机ip:8080
 ```
-::: tip 账号提示
-管理后台默认账号密码: admin/admin123!@#
-:::
+> [!NOTE]
+> 管理后台默认账号密码: admin/admin123!@#
+
 
 
 - vpn server
@@ -101,9 +101,8 @@ http://你的宿主机ip:8080
 
 
 ### 3-4、版本升级
-::: tip
-升级前请备份配置文件conf目录和数据库，并停止服务
-:::
+> [!NOTE]
+> 升级前请备份配置文件conf目录和数据库，并停止服务
 
 使用新版本的feijiang-admin二进制文件和feijiang-vpn二进制文件，放到对应的目录下面，替换旧版本。然后重新启动服务。
 
